@@ -68,3 +68,27 @@ h1 {
   background-color: darkred;
 }
 
+.choices-display {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.choices-display div {
+  text-align: center;
+}
+
+.choices-display img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.versus {
+  color: #00bfff;
+  font-size: 28px;
+  font-weight: bold;
+  align-self: center;
+}

@@ -2,6 +2,9 @@ const choices = ["rock", "paper", "scissors"];
 const randomNumber = Math.random();
 const randomIndex = Math.floor(randomNumber * 3);
 const computerChoice = choices[randomIndex];
+const playerImage = document.querySelector("#player-choice");
+const computerImage = document.querySelector("#computer-choice");
+
 //console.log(computerChoice);
 
 let wins = 0;
@@ -24,6 +27,9 @@ rockButton.addEventListener("click", () => {
   const computerChoice = getComputerChoice();
   rounds++;
   console.log(computerChoice);
+
+  playerImage.src = "images/rock.png";
+  computerImage.src = `images/${computerChoice}.png`;
 
   if (computerChoice === "rock") {
     result.textContent = "It's a tie!";
@@ -52,6 +58,9 @@ paperButton.addEventListener("click", () => {
   const computerChoice = getComputerChoice();
   console.log(computerChoice);
 
+  playerImage.src = "images/paper.png";
+  computerImage.src = `images/${computerChoice}.png`;
+
   if (computerChoice === "paper"){
     result.textContent = "It's a tie!";
     result.style.color = "orange";
@@ -78,6 +87,9 @@ scissorsButton.addEventListener("click", () => {
   const computerChoice = getComputerChoice();
   rounds++;
   console.log(computerChoice);
+
+  playerImage.src = "images/scissors.png";
+  computerImage.src = `images/${computerChoice}.png`;
 
   if (computerChoice === "scissors"){
     result.textContent = "It's a tie!";
@@ -118,6 +130,8 @@ resetButton.addEventListener("click", () => {
   rounds = 0;
   updateScoreboard();
   result.textContent = "";
+  playerImage.removeAttribute("src");
+  computerImage.removeAttribute("src");
 });
 
 updateScoreboard();
